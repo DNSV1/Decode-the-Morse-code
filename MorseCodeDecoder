@@ -1,0 +1,20 @@
+public class MorseCodeDecoder {
+    public static String decode(String morseCode) {
+        StringBuilder decoded = new StringBuilder();
+
+        String[] words = morseCode.split("   ");
+        for (String word : words) {
+            
+            String[] letters = word.split(" ");
+            
+            decoded.append(' ');
+            for (String letter : letters) {
+            
+                decoded.append(MorseCode.get(letter));
+                
+            }
+        }
+    
+    return decoded.toString().trim();
+    }
+}
